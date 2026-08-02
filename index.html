@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GG TEC | Servicio Técnico & Android TV</title>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #000000;
+            --card-bg: #0a0a0a;
+            --card-border: #ffffff;
+            --text-main: #ffffff;
+            --text-sub: #a0a0a0;
+            --hover-bg: #1a1a1a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 30px 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 600px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 22px;
+        }
+
+        /* Header & Logo */
+        header {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .logo-container {
+            width: 110px;
+            height: 200px;
+            border-radius: 20px;
+            border: 3px solid var(--text-main);
+            padding: 4px;
+            background-color: #000;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.15);
+            margin-bottom: 18px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .logo-container:hover {
+            transform: scale(1.03);
+        }
+
+        .logo-img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 14px;
+            background-color: #000;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            letter-spacing: 3px;
+            color: var(--text-main);
+            margin-bottom: 6px;
+            text-transform: uppercase;
+        }
+
+        p.tagline {
+            color: var(--text-sub);
+            font-size: 0.88rem;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+            max-width: 90%;
+        }
+
+        /* Títulos de sección */
+        .section-title {
+            width: 100%;
+            font-size: 0.85rem;
+            font-weight: 800;
+            color: var(--text-main);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 10px;
+            margin-bottom: -10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            padding-bottom: 6px;
+        }
+
+        /* Lista de Tarjetas */
+        .card-list {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1.5 solid var(--card-border);
+            border: 1px solid #ffffff;
+            border-radius: 12px;
+            padding: 16px 20px;
+            text-decoration: none;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: all 0.25s ease;
+        }
+
+        .card:hover {
+            background-color: var(--hover-bg);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(255, 255, 255, 0.15);
+        }
+
+        .card-content {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .card-icon {
+            font-size: 1.3rem;
+            color: var(--text-main);
+            width: 40px;
+            height: 40px;
+            border: 1px solid var(--text-main);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #000;
+        }
+
+        .card-text h3 {
+            font-size: 0.98rem;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+        }
+
+        .card-text p {
+            font-size: 0.8rem;
+            color: var(--text-sub);
+            margin-top: 2px;
+        }
+
+        .card-arrow {
+            color: var(--text-main);
+            font-size: 0.9rem;
+            transition: transform 0.25s ease;
+        }
+
+        .card:hover .card-arrow {
+            transform: translateX(4px);
+        }
+
+        /* Redes Sociales */
+        .social-bar {
+            display: flex;
+            gap: 18px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+        }
+
+        .social-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: #000;
+            border: 1px solid var(--text-main);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-main);
+            font-size: 1.2rem;
+            text-decoration: none;
+            transition: all 0.25s ease;
+        }
+
+        .social-icon:hover {
+            background-color: var(--text-main);
+            color: var(--bg-color);
+            transform: scale(1.1);
+        }
+
+        footer {
+            margin-top: 15px;
+            padding: 15px;
+            color: var(--text-sub);
+            font-size: 0.75rem;
+            text-align: center;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <!-- Header con Logo Teléfono B&W -->
+        <header>
+            <div class="logo-container">
+                <!-- Reemplaza 'logo.png' con la imagen del teléfono que subas a tu repositorio -->
+                <img src="logo.png" alt="GG TEC Logo" class="logo-img" onerror="this.src='https://via.placeholder.com/110x200/000000/FFFFFF?text=GG+TEC'">
+            </div>
+            <h1>GG TEC</h1>
+            <p class="tagline">Servicio Técnico • Android TV • Soluciones Tecnológicas</p>
+        </header>
+
+        <!-- Barra de Redes Sociales -->
+        <div class="social-bar">
+            <a href="https://www.instagram.com/ggtecnologiacl?igsh=MWpkY3l3eTdhaTd6dg%3D%3D&utm_source=qr" target="_blank" class="social-icon" title="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.tiktok.com/@ggtec.rar?_r=1&_t=ZS-98YZBcActgS" target="_blank" class="social-icon" title="TikTok">
+                <i class="fab fa-tiktok"></i>
+            </a>
+            <a href="https://youtube.com/@ggtecnologiacl?si=60i4GWi2r9wMYBZl" target="_blank" class="social-icon" title="YouTube">
+                <i class="fab fa-youtube"></i>
+            </a>
+        </div>
+
+        <!-- Sección Servicio Técnico -->
+        <div class="section-title">Asesoría & Reparaciones</div>
+        <div class="card-list">
+            <a href="https://wa.me/qr/CFGJHWUCQMDBB1" target="_blank" class="card">
+                <div class="card-content">
+                    <div class="card-icon"><i class="fab fa-whatsapp"></i></div>
+                    <div class="card-text">
+                        <h3>Cotización Servicio Técnico</h3>
+                        <p>Cotiza asesorías y reparación de equipos vía WhatsApp</p>
+                    </div>
+                </div>
+                <i class="fas fa-arrow-right card-arrow"></i>
+            </a>
+        </div>
+
+        <!-- Sección Streaming & Apps -->
+        <div class="section-title">Soluciones Android TV</div>
+        <div class="card-list">
+            <a href="https://www.mediafire.com/folder/tz31jhcotxkb4/GGAPPS+TV?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAdGRleATcilVwZG9mAmV4dG4DYWVtAjExAHNydGMGYXBwX2lkDzEyNDAyNDU3NDI4NzQxNAABp59jlxu38aOB9NgkcHMeAzSf0ybDWJ8kLLgRQAQG39nCWA-MIqxiZQhCiG8g_aem_qZ50sjC-nQoMkogShU5lSA" target="_blank" class="card">
+                <div class="card-content">
+                    <div class="card-icon"><i class="fas fa-download"></i></div>
+                    <div class="card-text">
+                        <h3>Mis Aplicaciones Recomendadas</h3>
+                        <p>Descarga la carpeta de apps optimizadas para Android TV</p>
+                    </div>
+                </div>
+                <i class="fas fa-arrow-right card-arrow"></i>
+            </a>
+
+            <a href="https://mpago.la/2cjbCSP" target="_blank" class="card">
+                <div class="card-content">
+                    <div class="card-icon"><i class="fas fa-tv"></i></div>
+                    <div class="card-text">
+                        <h3>TV Box + Contenido Ilimitado</h3>
+                        <p>Acceso completo a la mejor experiencia de entretenimiento</p>
+                    </div>
+                </div>
+                <i class="fas fa-arrow-right card-arrow"></i>
+            </a>
+        </div>
+
+        <!-- Sección Productos MercadoLibre -->
+        <div class="section-title">Productos Recomendados</div>
+        <div class="card-list">
+            <a href="https://meli.la/1jyPsME" target="_blank" class="card">
+                <div class="card-content">
+                    <div class="card-icon"><i class="fas fa-box-open"></i></div>
+                    <div class="card-text">
+                        <h3>TV Box Recomendado</h3>
+                        <p>Hardware de alta gama seleccionado en Mercado Libre</p>
+                    </div>
+                </div>
+                <i class="fas fa-arrow-right card-arrow"></i>
+            </a>
+
+            <a href="https://meli.la/1z7GkQP" target="_blank" class="card">
+                <div class="card-content">
+                    <div class="card-icon"><i class="fas fa-mobile-alt"></i></div>
+                    <div class="card-text">
+                        <h3>Clave para Compartir Pantalla</h3>
+                        <p>Dispositivo ideal para transmisión y mirroring</p>
+                    </div>
+                </div>
+                <i class="fas fa-arrow-right card-arrow"></i>
+            </a>
+        </div>
+
+        <footer>
+            <p>© 2026 GG TEC • ALL RIGHTS RESERVED</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
